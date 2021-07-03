@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CS50 REACT TUTORIAL</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <script type="text/babel">
+        class Count extends React.Component{
+
+            constructor(props){
+                super(props)
+                this.state = {
+                    count: 0
+                }
+            }
+
+            render(){
+                return(
+                    <div>
+                        <h1>{this.state.count}</h1>
+                        <button onClick={this.increment}>INCREMENT</button>
+                        <button onClick={this.decrement}>DECREMENT</button>
+                    </div>
+                )
+            }
+
+            increment = () =>{
+                this.setState({
+                    count: this.state.count + 1
+                })
+            }
+
+            decrement = () => {
+                this.setState({
+                    count: this.state.count - 1
+                })
+            }
+
+            
+
+        }
+
+        ReactDOM.render(<Count />, document.querySelector('#root'))
+    </script>
+    <div id="root"></div>
+    
+    
+</body>
+</html>

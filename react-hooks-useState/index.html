@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React Hooks Example useState</title>
+</head>
+<body>
+    <script type="text/babel">
+
+    // this state with hooks
+
+        const { useState } = React;
+
+        let Counter = () => {
+
+            const [count, setCount] = useState(0)
+
+            return(
+                <div>
+                    <h1>{count}</h1>
+                    <button onClick = {() => setCount(count + 1)}>+1</button>
+                    <button onClick = {() => setCount(0)}>reset</button>
+                </div>
+                )
+        }
+
+        ReactDOM.render(<Counter />,document.getElementById('root'))
+
+
+/*
+
+        //this state without hooks
+
+        class Counter extends React.Component{
+
+            constructor(props){
+                super(props);
+                this.state = {
+                    count: 0
+                }
+            }
+
+            render(){
+                return(
+                    <div>
+                        <h1>{this.state.count}</h1>
+                        <button onClick = {this.countScore}>+1</button>
+                        <button onClick = {this.resetScore}>reset Score</button>
+                    </div>
+                )
+            }
+
+            countScore = () => {
+                this.setState({
+                    count: this.state.count + 1
+                })
+            }
+            
+            resetScore = () => {
+                this.setState({
+                    count: 0
+                })
+            }
+            
+        }
+
+        ReactDOM.render(<Counter />, document.getElementById('root'))
+*/
+    </script>
+    <div id='root'></div>
+</body>
+</html>
